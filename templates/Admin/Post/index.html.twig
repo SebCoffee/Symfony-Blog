@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}
+    Tous les posts | Admin
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="row my-5">
+                    <h4 class="col-4 ">Liste des posts</h4>
+                    <div class="col-3 "></div>
+                    <a href="{{ path('admin.post.create') }}" class="col-4 btn btn-primary mx-auto">
+                        nouveau post</a>
+                </div>
+                <table class="table table-dark col-12">
+                    {% for post in allPosts %}
+                        <tr scope="row my-4">
+                            <th>
+                                {{ post.title }}
+                                <a href="{{ path('admin.post.edit', {id: post.id}) }}"
+                                   class="btn btn-primary " style="float: right">editer</a>
+                            </th>
+
+                        </tr>
+                        <tr scope="row my-4">
+                            <td>{{ post.content|raw }}</td>
+                        </tr>
+
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+

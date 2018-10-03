@@ -1,0 +1,25 @@
+index:
+    path: /
+    controller: App\Controller\Front\HomeController::index
+    methods: ['get']
+
+
+# route vers la page de listing des posts
+admin.post.index:
+    path: /admin/posts
+    controller: App\Controller\Admin\PostController::index
+    methods: ['get']
+
+# route vers la page d'édition d'un post - retrouvé par son id
+admin.post.edit:
+    path: /admin/posts/edit/{id}
+    controller: App\Controller\Admin\PostController::edit
+    methods: ['get', 'post']
+    requirements:
+        id: '\d+'
+
+# route vers la page de création d'un post
+admin.post.create:
+    path: /admin/posts/create
+    controller: App\Controller\Admin\PostController::create
+    methods: ['get', 'post']

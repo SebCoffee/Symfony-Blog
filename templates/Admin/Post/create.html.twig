@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+    {% block stylesheets %}
+    <link href="/css/stylesheet.css" type="text/css" rel="stylesheet"/>
+    {% endblock %}
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {{ include('Admin/Post/_post_form.html.twig') }}
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col">
+                <a href="{{ path('admin.post.index') }}" class="btn btn-primary"> revenir à la liste des postes</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
